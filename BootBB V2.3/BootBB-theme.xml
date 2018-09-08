@@ -7,7 +7,16 @@
 		<logo><![CDATA[images/bootbb/logo.png]]></logo>
 		<tablespace><![CDATA[0]]></tablespace>
 		<borderwidth><![CDATA[0]]></borderwidth>
-		<colors><![CDATA[a:10:{s:4:"blue";s:5:"Blue";s:3:"red";s:4:"Red";s:5:"green";s:6:"Green";s:4:"pink";s:5:"Pink";s:6:"purple";s:7:"Purple";s:6:"yellow";s:7:"Yellow";s:6:"indigo";s:7:"Indigo";s:4:"grey";s:5:"Grey";s:9:"turquoise";s:10:"Turquoise";s:7:"darkred";s:8:"Dark Red";}]]></colors>
+		<colors><![CDATA[a:10:{s:4:"blue";s:5:"Blue
+";s:3:"red";s:4:"Red
+";s:5:"green";s:6:"Green
+";s:4:"pink";s:5:"Pink
+";s:6:"purple";s:7:"Purple
+";s:6:"yellow";s:7:"Yellow
+";s:6:"indigo";s:7:"Indigo
+";s:4:"grey";s:5:"Grey
+";s:9:"turquoise";s:10:"Turquoise
+";s:7:"darkred";s:8:"Dark Red";}]]></colors>
 		<disporder><![CDATA[a:19:{s:10:"global.css";i:1;s:8:"css3.css";i:2;s:14:"responsive.css";i:3;s:8:"blue.css";i:4;s:7:"red.css";i:5;s:10:"usercp.css";i:6;s:17:"thread_status.css";i:7;s:16:"star_ratings.css";i:8;s:14:"showthread.css";i:9;s:12:"sceditor.css";i:10;s:9:"modcp.css";i:11;s:9:"green.css";i:12;s:8:"pink.css";i:13;s:10:"purple.css";i:14;s:10:"yellow.css";i:15;s:10:"indigo.css";i:16;s:8:"grey.css";i:17;s:13:"turquoise.css";i:18;s:11:"darkred.css";i:19;}]]></disporder>
 	</properties>
 	<stylesheets>
@@ -5683,6 +5692,7 @@ select {
 <br />
 
 <form action="member.php" method="post">
+<input name="my_post_key" type="hidden" value="{$mybb->post_code}"/>
 <input type="hidden" name="action" value="do_login" />
 <input type="hidden" name="url" value="{$redirect_url}" />
 <div class="tborder">
@@ -6550,6 +6560,7 @@ jQuery(document).on('click', '.panel-heading span.clickable', function(e){
 						<input name="action" type="hidden" value="do_login" />
 						<input name="url" type="hidden" value="" />
 						<input name="quick_login" type="hidden" value="1" />
+						<input name="my_post_key" type="hidden" value="{$mybb->post_code}"/>
 						<table width="100%" cellspacing="{$theme['borderwidth']}" cellpadding="{$theme['tablespace']}" border="0" class="tborder">
 							<tr>
 								<td class="thead" colspan="2"><strong>{$lang->login}</strong></td>
@@ -7493,6 +7504,7 @@ if(use_xmlhttprequest == "1")
 {$inline_errors}
 {$member_loggedin_notice}
 <form action="member.php" method="post">
+<input name="my_post_key" type="hidden" value="{$mybb->post_code}"/>
 <div class="tborder">
 
 <div class="thead">{$lang->login}</div>
@@ -12115,7 +12127,7 @@ if(use_xmlhttprequest == "1")
 </div><br />]]></template>
 		<template name="portal_welcome_guesttext" version="1609"><![CDATA[<span class="smalltext">{$lang->guest_welcome_registration}</span><br />
 <br />
-<form method="post" action="{$mybb->settings['bburl']}/member.php"><input type="hidden" name="action" value="do_login" /><input type="hidden" name="url" value="{$portal_url}" />
+<form method="post" action="{$mybb->settings['bburl']}/member.php"><input name="my_post_key" type="hidden" value="{$mybb->post_code}"/><input type="hidden" name="action" value="do_login" /><input type="hidden" name="url" value="{$portal_url}" />
 {$username}<br />&nbsp;&nbsp;<input type="text" class="textbox" name="username" value="" /><br /><br />
 {$lang->password}<br />&nbsp;&nbsp;<input type="password" class="textbox" name="password" value="" /><br /><br />
 <label title="{$lang->remember_me_desc}"><input type="checkbox" class="checkbox" name="remember" value="yes" /> {$lang->remember_me}</label><br /><br />
